@@ -73,7 +73,7 @@
     }).join('');
   }
 
-  function renderEditableCopy() { const values = { 'hero.title': data.site.hero?.title, 'hero.subtitle': data.site.hero?.subtitle, 'about.description': data.site.about?.description }; Object.entries(values).forEach(([key, value]) => { const element = $(`[data-edit="${key}"]`); if (element) element.textContent = value || ''; }); const theme = data.site.theme || {}; Object.entries(theme).forEach(([key, value]) => document.documentElement.style.setProperty(`--${key}`, value)); }
+  function renderEditableCopy() { const values = { 'hero.title': data.site.hero?.title, 'hero.subtitle': data.site.hero?.subtitle, 'about.description': data.site.about?.description }; Object.entries(values).forEach(([key, value]) => { const element = $(`[data-edit="${key}"]`); if (element) element.innerHTML = key === 'hero.title' ? escapeHTML(value || '').replace(/(transformam\.?)/i, '<em>$1</em>') : escapeHTML(value || ''); }); const theme = data.site.theme || {}; Object.entries(theme).forEach(([key, value]) => document.documentElement.style.setProperty(`--${key}`, value)); }
 
   function openProject(id) {
     const project = data.projects.find(item => item.id === id); if (!project) return;
