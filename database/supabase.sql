@@ -73,6 +73,9 @@ create policy "public can insert projects" on public.fecart_projects for insert 
 drop policy if exists "public can update projects" on public.fecart_projects;
 create policy "public can update projects" on public.fecart_projects for update using (true) with check (true);
 
+drop policy if exists "public can delete projects" on public.fecart_projects;
+create policy "public can delete projects" on public.fecart_projects for delete using (true);
+
 drop policy if exists "public can read likes" on public.fecart_project_likes;
 create policy "public can read likes" on public.fecart_project_likes for select using (true);
 
@@ -86,3 +89,4 @@ grant execute on function public.fecart_like_project(uuid) to anon, authenticate
 grant select on public.fecart_projects to anon, authenticated;
 grant select on public.fecart_project_likes to anon, authenticated;
 grant insert, update on public.fecart_projects to anon, authenticated;
+grant delete on public.fecart_projects to anon, authenticated;
