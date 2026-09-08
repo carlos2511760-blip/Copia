@@ -15,13 +15,13 @@
   .filter-button{flex:0 0 auto;scroll-snap-align:start;min-height:42px;white-space:nowrap}
   .projects-grid{display:flex;gap:14px;overflow-x:auto;overflow-y:hidden;margin-right:-24px;padding:3px 24px 18px 1px;scroll-snap-type:x mandatory;scrollbar-width:none}
   .projects-grid::-webkit-scrollbar{display:none}
-  .project-card,.project-card:nth-child(3n+2){flex:0 0 min(84vw,330px);grid-column:auto;scroll-snap-align:start;transform:none!important}
+  .project-card,.project-card:nth-child(3n/**/+2){flex:0 0 min(84vw,330px);grid-column:auto;scroll-snap-align:start;transform:none!important}
   .project-card:hover{transform:none!important}
   .project-image{height:185px}
   .project-card-body{padding:17px}
   .project-card h3{font-size:25px}
   .project-card:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
-  .projects-section:after{content:'Deslize para ver mais projetos →';display:block;color:var(--muted);font-size:11px;margin-top:4px}
+  .projects-section:after{content:"Deslize para ver mais projetos →";display:block;color:var(--muted);font-size:11px;margin-top:4px}
   .about-section{padding-top:64px;padding-bottom:68px}
   .about-section h2{font-size:clamp(44px,12vw,62px)}
   .quiz-cta{display:block;padding-top:64px;padding-bottom:68px}
